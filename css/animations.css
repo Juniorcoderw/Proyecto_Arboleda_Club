@@ -55,6 +55,18 @@
   }
 }
 
+/* Slide in desde arriba */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Scale in (zoom) */
 @keyframes scaleIn {
   from {
@@ -84,6 +96,28 @@
   }
   50% {
     transform: scale(1.05);
+  }
+}
+
+/* Soft Pulse */
+@keyframes softPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+/* Glow Pulse */
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(200, 169, 94, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(200, 169, 94, 0.6);
   }
 }
 
@@ -143,6 +177,18 @@
   }
 }
 
+/* Zoom animado para hero */
+@keyframes zoomIn {
+  0%, 100% {
+    transform: scale(1);
+    filter: brightness(0.8);
+  }
+  50% {
+    transform: scale(1.15);
+    filter: brightness(1);
+  }
+}
+
 /* Scroll infinito (para carrusel) */
 @keyframes scrollInfinite {
   from {
@@ -178,9 +224,24 @@
   animation: slideInLeft 0.8s ease-out forwards;
 }
 
+/* Slide in desde arriba */
+.animate-slide-in-up {
+  animation: slideInUp 0.8s ease-out forwards;
+}
+
 /* Scale in */
 .animate-scale-in {
   animation: scaleIn 0.6s ease-out forwards;
+}
+
+/* Glow pulse */
+.animate-glow-pulse {
+  animation: glowPulse 2s ease-in-out infinite;
+}
+
+/* Soft pulse */
+.animate-soft-pulse {
+  animation: softPulse 2.5s ease-in-out infinite;
 }
 
 /* Delays para animaciones escalonadas */
@@ -541,5 +602,4 @@ a, button, input, .menu-item, .evento-card, .filter-btn {
   .convenios-carousel {
     animation: none;
   }
-  
 }
