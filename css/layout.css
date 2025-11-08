@@ -109,59 +109,75 @@
 
 
 /* ============================================
-   HERO / BANNER PRINCIPAL
+   HERO / BANNER PRINCIPAL - MEJORADO
    ============================================ */
 
 .hero {
   position: relative;
-  height: 80vh;
-  min-height: 500px;
+  height: 100vh;
+  min-height: 600px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: var(--color-fondo);
   overflow: hidden;
-  background: linear-gradient(rgba(11, 30, 54, 0.6), rgba(11, 30, 54, 0.6)),
+  background: linear-gradient(rgba(11, 30, 54, 0.5), rgba(11, 30, 54, 0.5)),
               url('../assets/hero.jpg') center/cover no-repeat fixed;
+}
+
+/* Fondo con gradiente animado */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #0b1e36 0%, #1a3a52 50%, #0b1e36 100%);
+  background-size: 400% 400%;
+  animation: gradientShift 25s ease infinite;
+  z-index: 0;
+}
+
+/* Layer de zoom animado */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><pattern id="leaf" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse"><path d="M100 50 Q150 100 100 150 Q50 100 100 50" fill="%23c8a95e" opacity="0.08"/></pattern></defs><rect width="1200" height="800" fill="url(%23leaf)"/></svg>') center/cover;
+  animation: zoomIn 25s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes zoomIn {
+  0%, 100% {
+    transform: scale(1);
+    filter: brightness(0.8);
+  }
+  50% {
+    transform: scale(1.15);
+    filter: brightness(1);
+  }
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.4) 100%);
+  z-index: 1;
 }
 
 /* Hero para la página del menú */
 .hero--menu {
   height: 50vh;
   min-height: 400px;
-  background: linear-gradient(rgba(11, 30, 54, 0.7), rgba(11, 30, 54, 0.7)),
-              url('../assets/hero-menu.jpg') center/cover no-repeat;
-}
-
-.hero__overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.3);
-  z-index: 1;
-}
-
-/* Efecto parallax suave */
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: inherit;
-  background-size: 110%;
-  background-position: center;
-  animation: heroZoom 20s ease-in-out infinite alternate;
-  z-index: 0;
-}
-
-@keyframes heroZoom {
-  0% {
-    transform: scale(1);
-    filter: brightness(0.8);
-  }
-  100% {
-    transform: scale(1.1);
-    filter: brightness(1);
-  }
 }
 
 .hero__content {
@@ -184,28 +200,48 @@
 }
 
 .hero__title {
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: clamp(2.5rem, 8vw, 3.5rem);
   font-weight: var(--peso-bold);
-  color: var(--color-acento);
+  background: linear-gradient(135deg, var(--color-acento), #ffd700);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   margin-bottom: var(--espacio-md);
   text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
   line-height: 1.2;
+  letter-spacing: -1px;
+  animation: slideInUp 1s ease-out 0.2s both;
 }
 
 .hero__subtitle {
-  font-size: clamp(1rem, 2vw, 1.25rem);
-  color: #f0f0f0;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  color: rgba(240, 240, 240, 0.95);
   margin-bottom: var(--espacio-xl);
-  line-height: 1.6;
+  line-height: 1.7;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  animation: slideInUp 1s ease-out 0.4s both;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero__divider {
   width: 80px;
   height: 3px;
-  background: var(--color-acento);
+  background: linear-gradient(90deg, transparent, var(--color-acento), transparent);
   margin: var(--espacio-lg) auto;
   border-radius: var(--radio-sm);
+  animation: slideInUp 1s ease-out 0.3s both;
 }
 
 
@@ -321,7 +357,6 @@ section {
 }
 
 .footer__contacto {
-  /* Se anima con observer */
   opacity: 0;
   transform: translateY(25px);
   transition: all 0.8s ease;
@@ -373,7 +408,6 @@ section {
 
 /* Mapa */
 .footer__mapa {
-  /* Se anima con observer */
   opacity: 0;
   transform: translateY(25px);
   transition: all 0.8s ease 0.2s;
@@ -399,7 +433,6 @@ section {
   padding-top: var(--espacio-xl);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   
-  /* Se anima con observer */
   opacity: 0;
   transform: translateY(25px);
   transition: all 0.8s ease 0.3s;
