@@ -1,0 +1,448 @@
+/**
+ * LAYOUT.CSS
+ * Estructura principal del sitio (header, footer, secciones)
+ * La Arboleda Club - 2025
+ */
+
+
+/* ============================================
+   HEADER
+   ============================================ */
+
+.header {
+  background-color: var(--color-primario);
+  color: var(--color-fondo);
+  padding: var(--espacio-md) 0;
+  position: sticky;
+  top: 0;
+  z-index: var(--z-fixed);
+  box-shadow: var(--sombra-md);
+  transition: all var(--trans-normal);
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo-area {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-md);
+}
+
+.header__logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-acento);
+}
+
+.header__brand-name {
+  font-size: var(--texto-xl);
+  font-weight: var(--peso-semibold);
+  color: var(--color-fondo);
+  margin: 0;
+}
+
+/* Navegación */
+.header__nav {
+  display: flex;
+}
+
+.nav__list {
+  display: flex;
+  gap: var(--espacio-xl);
+  list-style: none;
+  align-items: center;
+}
+
+.nav__link {
+  color: var(--color-fondo);
+  text-decoration: none;
+  font-weight: var(--peso-medio);
+  font-size: var(--texto-base);
+  padding: var(--espacio-sm) 0;
+  position: relative;
+  transition: color var(--trans-normal);
+}
+
+/* Underline animado */
+.nav__link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-acento);
+  transition: width var(--trans-normal);
+}
+
+.nav__link:hover::after,
+.nav__link--active::after {
+  width: 100%;
+}
+
+.nav__link:hover,
+.nav__link--active {
+  color: var(--color-acento);
+}
+
+/* Botón hamburguesa (móvil) */
+.header__menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-fondo);
+  font-size: var(--texto-2xl);
+  cursor: pointer;
+  padding: var(--espacio-sm);
+  transition: color var(--trans-normal);
+}
+
+.header__menu-toggle:hover {
+  color: var(--color-acento);
+}
+
+
+/* ============================================
+   HERO / BANNER PRINCIPAL
+   ============================================ */
+
+.hero {
+  position: relative;
+  height: 80vh;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--color-fondo);
+  overflow: hidden;
+  background: linear-gradient(rgba(11, 30, 54, 0.6), rgba(11, 30, 54, 0.6)),
+              url('../assets/hero.jpg') center/cover no-repeat fixed;
+}
+
+/* Hero para la página del menú */
+.hero--menu {
+  height: 50vh;
+  min-height: 400px;
+  background: linear-gradient(rgba(11, 30, 54, 0.7), rgba(11, 30, 54, 0.7)),
+              url('../assets/hero-menu.jpg') center/cover no-repeat;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+/* Efecto parallax suave */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  background-size: 110%;
+  background-position: center;
+  animation: heroZoom 20s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+@keyframes heroZoom {
+  0% {
+    transform: scale(1);
+    filter: brightness(0.8);
+  }
+  100% {
+    transform: scale(1.1);
+    filter: brightness(1);
+  }
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: var(--espacio-2xl);
+  animation: fadeInUp 1.2s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero__title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: var(--peso-bold);
+  color: var(--color-acento);
+  margin-bottom: var(--espacio-md);
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  line-height: 1.2;
+}
+
+.hero__subtitle {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: #f0f0f0;
+  margin-bottom: var(--espacio-xl);
+  line-height: 1.6;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.hero__divider {
+  width: 80px;
+  height: 3px;
+  background: var(--color-acento);
+  margin: var(--espacio-lg) auto;
+  border-radius: var(--radio-sm);
+}
+
+
+/* ============================================
+   SECCIONES GENERALES
+   ============================================ */
+
+section {
+  scroll-margin-top: 80px;
+}
+
+.section__title {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  color: var(--color-primario);
+  text-align: center;
+  margin-bottom: var(--espacio-xl);
+  font-weight: var(--peso-semibold);
+}
+
+.section__title--light {
+  color: var(--color-fondo);
+}
+
+.section__description {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto var(--espacio-2xl);
+  color: var(--color-texto-claro);
+  line-height: 1.7;
+  font-size: var(--texto-lg);
+}
+
+
+/* ============================================
+   INFO SECTION
+   ============================================ */
+
+.info-section {
+  background: var(--color-fondo);
+  padding: var(--espacio-3xl) var(--espacio-lg);
+  text-align: center;
+}
+
+
+/* ============================================
+   CONVENIOS SECTION
+   ============================================ */
+
+.convenios-section {
+  background: linear-gradient(to bottom, #ffffff, #f8f8f8);
+  padding: var(--espacio-3xl) var(--espacio-lg);
+  text-align: center;
+  overflow: hidden;
+}
+
+
+/* ============================================
+   EVENTOS SECTION
+   ============================================ */
+
+.eventos-section {
+  background: var(--color-primario);
+  color: var(--color-fondo);
+  padding: var(--espacio-3xl) var(--espacio-lg);
+}
+
+.eventos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--espacio-2xl);
+  margin-top: var(--espacio-2xl);
+}
+
+
+/* ============================================
+   MENU SECTION
+   ============================================ */
+
+.menu-section {
+  background: var(--color-fondo-alt);
+  padding: var(--espacio-3xl) var(--espacio-lg);
+  min-height: 60vh;
+}
+
+.menu-wrapper {
+  position: relative;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--espacio-2xl);
+  transition: opacity var(--trans-lenta);
+}
+
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.footer {
+  background: linear-gradient(180deg, #0a1929, #0c2438);
+  color: var(--color-fondo);
+  padding: var(--espacio-3xl) var(--espacio-lg);
+}
+
+.footer__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--espacio-3xl);
+  align-items: start;
+  margin-bottom: var(--espacio-2xl);
+}
+
+.footer__contacto {
+  /* Se anima con observer */
+  opacity: 0;
+  transform: translateY(25px);
+  transition: all 0.8s ease;
+}
+
+.footer__title {
+  font-size: var(--texto-2xl);
+  color: var(--color-acento);
+  margin-bottom: var(--espacio-lg);
+  font-weight: var(--peso-semibold);
+}
+
+.footer__address {
+  font-style: normal;
+}
+
+.footer__info {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-md);
+  margin-bottom: var(--espacio-md);
+  font-size: var(--texto-base);
+}
+
+.footer__info i {
+  color: var(--color-acento);
+  font-size: var(--texto-lg);
+  width: 24px;
+  flex-shrink: 0;
+}
+
+.footer__info a {
+  color: var(--color-fondo);
+  text-decoration: none;
+  transition: color var(--trans-normal);
+}
+
+.footer__info a:hover {
+  color: var(--color-acento);
+  text-decoration: underline;
+}
+
+/* Redes sociales */
+.footer__social {
+  display: flex;
+  gap: var(--espacio-lg);
+  margin-top: var(--espacio-xl);
+}
+
+/* Mapa */
+.footer__mapa {
+  /* Se anima con observer */
+  opacity: 0;
+  transform: translateY(25px);
+  transition: all 0.8s ease 0.2s;
+}
+
+.footer__mapa-title {
+  font-size: var(--texto-xl);
+  margin-bottom: var(--espacio-lg);
+  color: var(--color-acento);
+}
+
+.footer__mapa-iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+  border-radius: var(--radio-lg);
+  box-shadow: var(--sombra-lg);
+}
+
+/* Bottom bar */
+.footer__bottom {
+  text-align: center;
+  padding-top: var(--espacio-xl);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  
+  /* Se anima con observer */
+  opacity: 0;
+  transform: translateY(25px);
+  transition: all 0.8s ease 0.3s;
+}
+
+.footer__copyright {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: var(--texto-sm);
+  margin-bottom: var(--espacio-xs);
+}
+
+.footer__credits {
+  color: var(--color-acento);
+  font-size: var(--texto-sm);
+}
+
+/* Animación visible */
+.footer .visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+
+/* ============================================
+   PÁGINA DE MENÚ - GRIDS
+   ============================================ */
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--espacio-2xl);
+}
+
+/* Vista simple oculta por defecto */
+.menu-simple {
+  display: none;
+}
+
+
+/* ============================================
+   SCROLL SECTIONS (margen para header fijo)
+   ============================================ */
+
+section[id] {
+  scroll-margin-top: 100px;
+}

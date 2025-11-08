@@ -1,0 +1,388 @@
+/**
+ * BASE.CSS
+ * Variables CSS, reset y estilos fundamentales
+ * La Arboleda Club - 2025
+ */
+
+/* ============================================
+   VARIABLES CSS (Design Tokens)
+   ============================================ */
+:root {
+  /* Colores principales */
+  --color-primario: #0b1e36;
+  --color-acento: #c8a95e;
+  --color-fondo: #ffffff;
+  --color-fondo-alt: #f4f4f4;
+  
+  /* Colores de texto */
+  --color-texto: #222222;
+  --color-texto-claro: #666666;
+  --color-texto-disabled: #999999;
+  
+  /* Colores de estado */
+  --color-hover: #e1b963;
+  --color-active: #a88c4a;
+  --color-error: #d32f2f;
+  --color-exito: #388e3c;
+  --color-info: #1976d2;
+  
+  /* Colores de borde */
+  --color-borde: #e0e0e0;
+  --color-borde-claro: #f0f0f0;
+  
+  /* Sombras */
+  --sombra-xs: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --sombra-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --sombra-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+  --sombra-lg: 0 8px 24px rgba(0, 0, 0, 0.16);
+  --sombra-xl: 0 12px 32px rgba(0, 0, 0, 0.20);
+  
+  /* Tipografía */
+  --fuente-principal: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  
+  --texto-xs: 0.75rem;    /* 12px */
+  --texto-sm: 0.875rem;   /* 14px */
+  --texto-base: 1rem;     /* 16px */
+  --texto-lg: 1.125rem;   /* 18px */
+  --texto-xl: 1.25rem;    /* 20px */
+  --texto-2xl: 1.5rem;    /* 24px */
+  --texto-3xl: 1.875rem;  /* 30px */
+  --texto-4xl: 2.25rem;   /* 36px */
+  --texto-5xl: 3rem;      /* 48px */
+  
+  --peso-normal: 400;
+  --peso-medio: 500;
+  --peso-semibold: 600;
+  --peso-bold: 700;
+  
+  /* Espaciado */
+  --espacio-xs: 0.25rem;  /* 4px */
+  --espacio-sm: 0.5rem;   /* 8px */
+  --espacio-md: 1rem;     /* 16px */
+  --espacio-lg: 1.5rem;   /* 24px */
+  --espacio-xl: 2rem;     /* 32px */
+  --espacio-2xl: 3rem;    /* 48px */
+  --espacio-3xl: 4rem;    /* 64px */
+  
+  /* Border radius */
+  --radio-sm: 0.375rem;   /* 6px */
+  --radio-md: 0.5rem;     /* 8px */
+  --radio-lg: 0.75rem;    /* 12px */
+  --radio-xl: 1rem;       /* 16px */
+  --radio-full: 9999px;
+  
+  /* Transiciones */
+  --trans-rapida: 150ms ease;
+  --trans-normal: 250ms ease;
+  --trans-lenta: 400ms ease;
+  
+  /* Breakpoints (para usar con JS) */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  
+  /* Z-index */
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-fixed: 300;
+  --z-modal-backdrop: 400;
+  --z-modal: 500;
+  --z-toast: 600;
+}
+
+
+/* ============================================
+   RESET Y ESTILOS BASE
+   ============================================ */
+
+/* Reset básico */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* HTML y Body */
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--fuente-principal);
+  font-size: var(--texto-base);
+  line-height: 1.6;
+  color: var(--color-texto);
+  background-color: var(--color-fondo);
+  overflow-x: hidden;
+}
+
+/* Mejora de scroll en móviles */
+body {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Títulos */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--peso-semibold);
+  line-height: 1.2;
+  color: var(--color-primario);
+}
+
+h1 { font-size: var(--texto-4xl); }
+h2 { font-size: var(--texto-3xl); }
+h3 { font-size: var(--texto-2xl); }
+h4 { font-size: var(--texto-xl); }
+h5 { font-size: var(--texto-lg); }
+h6 { font-size: var(--texto-base); }
+
+/* Enlaces */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--trans-normal);
+}
+
+a:hover {
+  color: var(--color-acento);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--color-acento);
+  outline-offset: 2px;
+}
+
+/* Imágenes */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+img[loading="lazy"] {
+  /* Placeholder mientras carga */
+  background-color: var(--color-fondo-alt);
+}
+
+/* Botones */
+button {
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  transition: all var(--trans-normal);
+}
+
+button:focus-visible {
+  outline: 2px solid var(--color-acento);
+  outline-offset: 2px;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Inputs */
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid var(--color-acento);
+  outline-offset: 2px;
+}
+
+/* Listas */
+ul, ol {
+  list-style: none;
+}
+
+/* Eliminar efecto azul/celeste al tocar en móviles */
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+a, button, input[type="submit"] {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+/* Selección de texto */
+::selection {
+  background-color: var(--color-acento);
+  color: var(--color-fondo);
+}
+
+::-moz-selection {
+  background-color: var(--color-acento);
+  color: var(--color-fondo);
+}
+
+
+/* ============================================
+   UTILIDADES DE ACCESIBILIDAD
+   ============================================ */
+
+/* Screen reader only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Skip to content */
+.skip-to-content {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-primario);
+  color: white;
+  padding: var(--espacio-md);
+  z-index: 1000;
+  transition: top var(--trans-normal);
+}
+
+.skip-to-content:focus {
+  top: 0;
+}
+
+/* Reducir movimiento para usuarios sensibles */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/* ============================================
+   CLASES UTILITARIAS
+   ============================================ */
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--espacio-md);
+  padding-right: var(--espacio-md);
+}
+
+.hidden {
+  display: none !important;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/* Márgenes automáticos */
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Display */
+.d-block {
+  display: block;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-grid {
+  display: grid;
+}
+
+/* Flex utilities */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Sombras */
+.shadow-sm {
+  box-shadow: var(--sombra-sm);
+}
+
+.shadow-md {
+  box-shadow: var(--sombra-md);
+}
+
+.shadow-lg {
+  box-shadow: var(--sombra-lg);
+}
+
+
+/* ============================================
+   SCROLL PERSONALIZADO
+   ============================================ */
+
+/* Webkit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-fondo-alt);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-acento);
+  border-radius: var(--radio-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-active);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-acento) var(--color-fondo-alt);
+}

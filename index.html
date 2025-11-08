@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="La Arboleda Club - Restaurante peruano en Tacna con gastronomía auténtica y ambiente natural">
+  <meta name="keywords" content="restaurante, Tacna, Perú, comida peruana, ceviche, lomo saltado">
+  <title>La Arboleda Club | Restaurante Peruano en Tacna</title>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Iconos -->
+  <script src="https://kit.fontawesome.com/4a35f7db0b.js" crossorigin="anonymous" defer></script>
+</head>
+
+<body>
+  
+  <!-- HEADER -->
+  <header class="header" role="banner">
+    <div class="container header__container">
+      
+      <div class="header__logo-area">
+        <img src="assets/logo-arboleda.png" alt="Logo La Arboleda Club" class="header__logo" width="50" height="50">
+        <h1 class="header__brand-name">La Arboleda Club</h1>
+      </div>
+
+      <nav class="header__nav" role="navigation" aria-label="Navegación principal">
+        <ul class="nav__list" id="navMenu">
+          <li class="nav__item"><a href="#inicio" class="nav__link nav__link--active">Inicio</a></li>
+          <li class="nav__item"><a href="menu.html" class="nav__link">Carta</a></li>
+          <li class="nav__item"><a href="#eventos" class="nav__link">Eventos</a></li>
+          <li class="nav__item"><a href="#contacto" class="nav__link">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <button class="header__menu-toggle" id="menuToggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+      </button>
+      
+    </div>
+  </header>
+
+  <!-- HERO PRINCIPAL -->
+  <section id="inicio" class="hero hero--home" role="banner">
+    <div class="hero__overlay" aria-hidden="true"></div>
+    <div class="hero__content">
+      <h2 class="hero__title">Bienvenido a La Arboleda Club</h2>
+      <p class="hero__subtitle">Un rincón gastronómico con esencia natural y sabores únicos</p>
+      <a href="menu.html" class="btn btn--primary btn--hero">
+        <i class="fas fa-utensils"></i> Ver nuestra carta
+      </a>
+    </div>
+  </section>
+
+  <!-- SECCIÓN DE INFORMACIÓN -->
+  <section class="info-section" aria-labelledby="info-title">
+    <div class="container">
+      <h2 id="info-title" class="section__title">Experiencia culinaria en un entorno natural</h2>
+      <p class="section__description">
+        En <strong>La Arboleda Club</strong>, fusionamos la tradición peruana con un ambiente natural y acogedor.
+        Disfruta de nuestros platos cuidadosamente elaborados, rodeado de naturaleza y hospitalidad.
+      </p>
+
+      <div class="horario-card">
+        <h3 class="horario-card__title">Horario de Atención</h3>
+        <p class="horario-card__content">
+          <i class="far fa-clock" aria-hidden="true"></i> 
+          Martes a Domingo: <strong>9:00 a.m. - 5:00 p.m.</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN CONVENIOS -->
+  <section class="convenios-section" aria-labelledby="convenios-title">
+    <div class="container">
+      <h2 id="convenios-title" class="section__title">Convenios y Colaboraciones</h2>
+      <div class="convenios-carousel" aria-label="Logos de empresas aliadas">
+        <img src="assets/convenios/logo1.png" alt="Convenio con empresa 1" loading="lazy">
+        <img src="assets/convenios/logo2.png" alt="Convenio con empresa 2" loading="lazy">
+        <img src="assets/convenios/logo3.png" alt="Convenio con empresa 3" loading="lazy">
+        <img src="assets/convenios/logo4.png" alt="Convenio con empresa 4" loading="lazy">
+        <img src="assets/convenios/logo5.png" alt="Convenio con empresa 5" loading="lazy">
+        <!-- Duplicados para efecto infinito -->
+        <img src="assets/convenios/logo1.png" alt="" aria-hidden="true" loading="lazy">
+        <img src="assets/convenios/logo2.png" alt="" aria-hidden="true" loading="lazy">
+        <img src="assets/convenios/logo3.png" alt="" aria-hidden="true" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN EVENTOS -->
+  <section id="eventos" class="eventos-section" aria-labelledby="eventos-title">
+    <div class="container">
+      <h2 id="eventos-title" class="section__title section__title--light">Próximos Eventos</h2>
+      
+      <div class="eventos-grid">
+        
+        <article class="evento-card">
+          <img src="assets/eventos/evento1.jpg" alt="Imagen del evento Noche Criolla" class="evento-card__image" loading="lazy">
+          <div class="evento-card__content">
+            <h3 class="evento-card__title">Noche Criolla</h3>
+            <p class="evento-card__description">
+              Disfruta de música en vivo, baile y gastronomía peruana bajo las estrellas.
+            </p>
+            <time class="evento-card__date" datetime="2025-11-02">
+              <i class="far fa-calendar-alt" aria-hidden="true"></i> Sábado 2 de Noviembre | 7:00 PM
+            </time>
+          </div>
+        </article>
+
+        <article class="evento-card">
+          <img src="assets/eventos/evento2.jpg" alt="Imagen del Festival del Ceviche" class="evento-card__image" loading="lazy">
+          <div class="evento-card__content">
+            <h3 class="evento-card__title">Festival del Ceviche</h3>
+            <p class="evento-card__description">
+              Una jornada llena de sabor con los mejores chefs invitados.
+            </p>
+            <time class="evento-card__date" datetime="2025-11-10">
+              <i class="far fa-calendar-alt" aria-hidden="true"></i> Domingo 10 de Noviembre | 12:00 PM
+            </time>
+          </div>
+        </article>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contacto" class="footer" role="contentinfo">
+    <div class="container footer__container">
+      
+      <!-- INFORMACIÓN DE CONTACTO -->
+      <div class="footer__contacto">
+        <h2 class="footer__title">Contáctanos</h2>
+        
+        <address class="footer__address">
+          <p class="footer__info">
+            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+            <a href="https://maps.google.com/?q=La+Arboleda+Club+Tacna" target="_blank" rel="noopener noreferrer">
+              Av. Celestino Vargas 1820, Tacna 23002, Perú
+            </a>
+          </p>
+          
+          <p class="footer__info">
+            <i class="fas fa-phone-alt" aria-hidden="true"></i>
+            <a href="tel:+51908881162">+51 908 881 162</a>
+          </p>
+          
+          <p class="footer__info">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+            <a href="mailto:contacto@laarboledaclub.pe">contacto@laarboledaclub.pe</a>
+          </p>
+        </address>
+
+        <!-- REDES SOCIALES CON TOOLTIPS -->
+        <div class="footer__social" role="navigation" aria-label="Redes sociales">
+          <a href="https://www.facebook.com/laarboledaclub" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="social-link" 
+             data-tooltip="Facebook"
+             aria-label="Visitar Facebook de La Arboleda Club">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          
+          <a href="https://www.instagram.com/laarboledaclub" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="social-link" 
+             data-tooltip="Instagram"
+             aria-label="Visitar Instagram de La Arboleda Club">
+            <i class="fab fa-instagram"></i>
+          </a>
+          
+          <a href="https://wa.me/51908881162" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="social-link" 
+             data-tooltip="WhatsApp"
+             aria-label="Contactar por WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+          
+          <a href="mailto:contacto@laarboledaclub.pe" 
+             class="social-link" 
+             data-tooltip="Correo"
+             aria-label="Enviar correo electrónico">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- MAPA -->
+      <div class="footer__mapa">
+        <h3 class="footer__mapa-title">Encuéntranos aquí</h3>
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3819.576879513369!2d-70.2085!3d-17.98469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91424b8ebae12345%3A0xabcdef1234567890!2sLa%20Arboleda%20Club!5e0!3m2!1ses-419!2spe!4v1698750000000!5m2!1ses-419!2spe" 
+          class="footer__mapa-iframe"
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Ubicación de La Arboleda Club en Google Maps">
+        </iframe>
+      </div>
+      
+    </div>
+
+    <!-- COPYRIGHT -->
+    <div class="footer__bottom">
+      <p class="footer__copyright">© 2025 La Arboleda Club — Todos los derechos reservados.</p>
+      <p class="footer__credits">Diseñado y programado por <strong>H-Junior</strong></p>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="js/utils.js" defer></script>
+  <script src="js/main.js" defer></script>
+  
+</body>
+</html>

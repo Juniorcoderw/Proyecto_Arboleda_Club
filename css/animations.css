@@ -1,0 +1,545 @@
+/**
+ * ANIMATIONS.CSS
+ * Todas las animaciones y transiciones del sitio
+ * La Arboleda Club - 2025
+ */
+
+
+/* ============================================
+   KEYFRAMES
+   ============================================ */
+
+/* Fade in desde abajo */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade in simple */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Slide in desde la derecha */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide in desde la izquierda */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Scale in (zoom) */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Bounce suave */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Pulse (latido) */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Shake (sacudir) */
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+/* Spinner (carga) */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Shimmer (brillo que pasa) */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* Float (flotante) */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Gradient animation */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Scroll infinito (para carrusel) */
+@keyframes scrollInfinite {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+
+/* ============================================
+   CLASES DE ANIMACIÓN
+   ============================================ */
+
+/* Fade in desde abajo (trigger con observer) */
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Fade in simple */
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Slide in desde la derecha */
+.animate-slide-in-right {
+  animation: slideInRight 0.8s ease-out forwards;
+}
+
+/* Slide in desde la izquierda */
+.animate-slide-in-left {
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+/* Scale in */
+.animate-scale-in {
+  animation: scaleIn 0.6s ease-out forwards;
+}
+
+/* Delays para animaciones escalonadas */
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+
+
+/* ============================================
+   HOVER EFFECTS
+   ============================================ */
+
+/* Lift (levantar) */
+.hover-lift {
+  transition: transform var(--trans-normal), box-shadow var(--trans-normal);
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--sombra-lg);
+}
+
+/* Glow (brillo) */
+.hover-glow {
+  transition: box-shadow var(--trans-normal);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(200, 169, 94, 0.5);
+}
+
+/* Grow (crecer) */
+.hover-grow {
+  transition: transform var(--trans-normal);
+}
+
+.hover-grow:hover {
+  transform: scale(1.05);
+}
+
+/* Underline animado */
+.hover-underline {
+  position: relative;
+}
+
+.hover-underline::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-acento);
+  transition: width var(--trans-normal);
+}
+
+.hover-underline:hover::after {
+  width: 100%;
+}
+
+
+/* ============================================
+   LOADING STATES
+   ============================================ */
+
+/* Skeleton loader */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--color-fondo-alt) 25%,
+    #e8e8e8 50%,
+    var(--color-fondo-alt) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--radio-md);
+}
+
+/* Pulse loading */
+.pulse-loading {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Spinner */
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+
+/* ============================================
+   MODAL ANIMATIONS
+   ============================================ */
+
+/* Aparición del modal */
+.modal-enter {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.modal-content-enter {
+  animation: scaleIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Salida del modal */
+.modal-exit {
+  animation: fadeIn 0.3s ease-in reverse;
+}
+
+
+/* ============================================
+   SCROLL REVEAL (con IntersectionObserver)
+   ============================================ */
+
+/* Estado inicial (invisible) */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Estado visible (activado por observer) */
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Variantes de reveal */
+.scroll-reveal-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 0.8s ease-out;
+}
+
+.scroll-reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scroll-reveal-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: all 0.8s ease-out;
+}
+
+.scroll-reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scroll-reveal-scale {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.8s ease-out;
+}
+
+.scroll-reveal-scale.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+/* ============================================
+   CONVENIOS CAROUSEL ANIMATION
+   ============================================ */
+
+.convenios-carousel {
+  animation: scrollInfinite 30s linear infinite;
+}
+
+.convenios-carousel:hover {
+  animation-play-state: paused;
+}
+
+
+/* ============================================
+   PARALLAX SCROLL
+   ============================================ */
+
+.parallax {
+  transition: transform 0.1s ease-out;
+}
+
+/* Aplicar con JS: 
+   element.style.transform = `translateY(${scrollY * 0.5}px)`;
+*/
+
+
+/* ============================================
+   BUTTON ANIMATIONS
+   ============================================ */
+
+/* Ripple effect (se aplica con JS) */
+.ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.ripple:active::after {
+  width: 300px;
+  height: 300px;
+}
+
+/* Shine effect en botones */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shine::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.6s ease;
+}
+
+.btn-shine:hover::before {
+  left: 150%;
+}
+
+
+/* ============================================
+   MICRO-INTERACTIONS
+   ============================================ */
+
+/* Bounce al hacer clic */
+.click-bounce:active {
+  animation: bounce 0.3s ease-out;
+}
+
+/* Shake para errores */
+.shake-error {
+  animation: shake 0.5s ease-in-out;
+}
+
+/* Float continuo */
+.float-continuous {
+  animation: float 3s ease-in-out infinite;
+}
+
+
+/* ============================================
+   TRANSITIONS SUAVES
+   ============================================ */
+
+/* Transición suave para todos los elementos interactivos */
+a, button, input, .menu-item, .evento-card, .filter-btn {
+  transition: all var(--trans-normal);
+}
+
+/* Transición para colores de fondo */
+.bg-transition {
+  transition: background-color var(--trans-normal);
+}
+
+/* Transición para opacidad */
+.opacity-transition {
+  transition: opacity var(--trans-normal);
+}
+
+/* Transición para transformaciones */
+.transform-transition {
+  transition: transform var(--trans-normal);
+}
+
+
+/* ============================================
+   PERFORMANCE HINTS
+   ============================================ */
+
+/* Optimización para animaciones GPU */
+.will-animate {
+  will-change: transform;
+}
+
+.will-animate-opacity {
+  will-change: opacity;
+}
+
+/* Nota: Usar will-change solo en elementos que
+   efectivamente se van a animar, y removerlo
+   después de la animación */
+
+
+/* ============================================
+   ESTADOS DE CARGA ESPECÍFICOS
+   ============================================ */
+
+/* Loading para imágenes */
+.image-loading {
+  background: linear-gradient(
+    90deg,
+    #f0f0f0 25%,
+    #e0e0e0 50%,
+    #f0f0f0 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Placeholder blur (para lazy loading) */
+.image-placeholder {
+  filter: blur(10px);
+  transition: filter 0.3s ease;
+}
+
+.image-placeholder.loaded {
+  filter: blur(0);
+}
+
+
+/* ============================================
+   ACCESIBILIDAD - REDUCCIÓN DE MOVIMIENTO
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  
+  /* Desactivar todas las animaciones */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  /* Mantener funcionalidad pero sin animación */
+  .scroll-reveal,
+  .scroll-reveal-left,
+  .scroll-reveal-right,
+  .scroll-reveal-scale {
+    opacity: 1;
+    transform: none;
+  }
+  
+  .convenios-carousel {
+    animation: none;
+  }
+  
+}

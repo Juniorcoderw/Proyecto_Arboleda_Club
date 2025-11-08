@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Carta completa de La Arboleda Club - Platos peruanos, ceviches, pastas y más">
+  <title>Carta | La Arboleda Club</title>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/menu-page.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Iconos -->
+  <script src="https://kit.fontawesome.com/4a35f7db0b.js" crossorigin="anonymous" defer></script>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header" role="banner">
+    <div class="container header__container">
+      
+      <div class="header__logo-area">
+        <img src="assets/logo-arboleda.png" alt="Logo La Arboleda Club" class="header__logo" width="50" height="50">
+        <h1 class="header__brand-name">La Arboleda Club</h1>
+      </div>
+
+      <nav class="header__nav" role="navigation" aria-label="Navegación principal">
+        <ul class="nav__list" id="navMenu">
+          <li class="nav__item"><a href="index.html" class="nav__link">Inicio</a></li>
+          <li class="nav__item"><a href="menu.html" class="nav__link nav__link--active">Carta</a></li>
+          <li class="nav__item"><a href="index.html#eventos" class="nav__link">Eventos</a></li>
+          <li class="nav__item"><a href="index.html#contacto" class="nav__link">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <button class="header__menu-toggle" id="menuToggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+      </button>
+      
+    </div>
+  </header>
+
+  <!-- STICKY HEADER (aparece al hacer scroll) -->
+  <div class="sticky-header" id="stickyHeader" role="banner" aria-label="Navegación fija">
+    <span class="sticky-header__text">Carta | La Arboleda Club</span>
+    <i class="fas fa-leaf" aria-hidden="true"></i>
+  </div>
+
+  <!-- HERO DE LA CARTA -->
+  <section class="hero hero--menu">
+    <div class="hero__overlay" aria-hidden="true"></div>
+    <div class="hero__content">
+      <h2 class="hero__title">Nuestra Carta</h2>
+      <div class="hero__divider" aria-hidden="true"></div>
+      <p class="hero__subtitle">
+        Sabores auténticos, frescura natural y una experiencia que te conecta con lo mejor del Perú.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECCIÓN DEL MENÚ -->
+  <main class="menu-section">
+    <div class="container">
+
+      <!-- FILTROS DE CATEGORÍAS -->
+      <div class="menu-filters" id="menuFilters" role="navigation" aria-label="Filtros de categorías">
+        <!-- Se generan dinámicamente con JS -->
+      </div>
+
+      <!-- TOGGLE DE VISTAS -->
+      <div class="view-toggle" role="group" aria-label="Cambiar tipo de vista">
+        <span class="view-toggle__label">Vista:</span>
+        <button 
+          class="view-toggle__btn view-toggle__btn--active" 
+          id="toggleDetailed"
+          aria-pressed="true"
+          aria-label="Cambiar a vista detallada">
+          <i class="fas fa-th-large"></i> Detallada
+        </button>
+        <button 
+          class="view-toggle__btn" 
+          id="toggleSimple"
+          aria-pressed="false"
+          aria-label="Cambiar a vista simple">
+          <i class="fas fa-list"></i> Simple
+        </button>
+      </div>
+
+      <!-- ESTADO DE CARGA -->
+      <div class="loading-state" id="loadingState">
+        <div class="spinner" aria-label="Cargando menú"></div>
+        <p>Cargando menú delicioso...</p>
+      </div>
+
+      <!-- ESTADO DE ERROR -->
+      <div class="error-state hidden" id="errorState">
+        <i class="fas fa-exclamation-triangle"></i>
+        <p>No pudimos cargar el menú. Por favor, intenta nuevamente.</p>
+        <button class="btn btn--primary" onclick="location.reload()">Reintentar</button>
+      </div>
+
+      <!-- CONTENEDORES DE MENÚ -->
+      <div class="menu-wrapper">
+        
+        <!-- Vista Detallada (con tarjetas) -->
+        <div 
+          class="menu-grid" 
+          id="menuGrid" 
+          role="region" 
+          aria-label="Menú en vista detallada"
+          aria-live="polite">
+          <!-- Se genera dinámicamente con JS -->
+        </div>
+
+        <!-- Vista Simple (lista textual) -->
+        <div 
+          class="menu-simple hidden" 
+          id="menuSimple" 
+          role="region" 
+          aria-label="Menú en vista simple"
+          aria-live="polite">
+          <!-- Se genera dinámicamente con JS -->
+        </div>
+        
+      </div>
+
+    </div>
+  </main>
+
+  <!-- MODAL DE DETALLE DE PLATO -->
+  <div 
+    class="modal" 
+    id="menuModal" 
+    role="dialog" 
+    aria-modal="true" 
+    aria-labelledby="modalTitle"
+    aria-hidden="true">
+    
+    <div class="modal__overlay" data-close-modal></div>
+    
+    <div class="modal__content">
+      
+      <button 
+        class="modal__close" 
+        id="modalClose"
+        aria-label="Cerrar modal">
+        <i class="fas fa-times"></i>
+      </button>
+
+      <img 
+        src="" 
+        alt="" 
+        class="modal__image" 
+        id="modalImage">
+      
+      <h3 class="modal__title" id="modalTitle">
+        <!-- Nombre del plato -->
+      </h3>
+      
+      <p class="modal__description" id="modalDescription">
+        <!-- Descripción del plato -->
+      </p>
+      
+      <p class="modal__price" id="modalPrice">
+        <!-- Precio -->
+      </p>
+      
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="js/utils.js" defer></script>
+  <script src="js/modal.js" defer></script>
+  <script src="js/menu-loader.js" defer></script>
+  <script src="js/menu-filters.js" defer></script>
+  <script src="js/menu-views.js" defer></script>
+  <script src="js/main.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,308 @@
+{
+  "entradas": [
+    {
+      "nombre": "Papa a la Huancaína",
+      "descripcion": "Finas rodajas de papa bañadas en crema huancaína, acompañadas de aceituna y lechuga.",
+      "precio": "14.00",
+      "imagen": "assets/menu/papa-huancaina.jpg"
+    },
+    {
+      "nombre": "Choclo con Queso",
+      "descripcion": "Choclo tierno acompañado con queso fresco.",
+      "precio": "12.00",
+      "imagen": "assets/menu/choclo-queso.jpg"
+    },
+    {
+      "nombre": "Palta Reina",
+      "descripcion": "Palta seleccionada rellena de pollo y verduras cocidas, bañadas en mayonesa.",
+      "precio": "14.00",
+      "imagen": "assets/menu/palta-reina.jpg"
+    },
+    {
+      "nombre": "Causa Limeña",
+      "descripcion": "Pasta de papa amarilla con pollo deshilachado, palta y mayonesa.",
+      "precio": "14.00",
+      "imagen": "assets/menu/causa-limena.jpg"
+    },
+    {
+      "nombre": "Causa de Atún",
+      "descripcion": "Pasta de papa amarilla con atún, palta y mayonesa.",
+      "precio": "14.00",
+      "imagen": "assets/menu/causa-atun.jpg"
+    },
+    {
+      "nombre": "Leche de Tigre",
+      "descripcion": "Clásica leche de tigre preparada con zumo de limón, cebolla y trozos de pescado fresco.",
+      "precio": "12.00",
+      "imagen": "assets/menu/leche-tigre.jpg"
+    },
+    {
+      "nombre": "Tequeños con Queso",
+      "descripcion": "Masa frita rellena de queso, acompañada de salsa de guacamole (10 unidades).",
+      "precio": "14.00",
+      "imagen": "assets/menu/tequenos.jpg"
+    },
+    {
+      "nombre": "Yucas Fritas",
+      "descripcion": "Yucas prensadas rellenas de queso mozzarella, acompañadas con salsa huancaína (5 unidades).",
+      "precio": "14.00",
+      "imagen": "assets/menu/yucas-fritas.jpg"
+    },
+    {
+      "nombre": "Cancha Picante",
+      "descripcion": "Canchita serrana acompañada de rocoto picado, cilantro y limón.",
+      "precio": "8.00",
+      "imagen": "assets/menu/cancha-picante.jpg"
+    }
+  ],
+
+  "pollo": [
+    {
+      "nombre": "Cordon Bleu",
+      "descripcion": "Pechuga de pollo empanizada rellena de jamón y queso, acompañada con papas fritas, arroz o ensalada.",
+      "precio": "30.00",
+      "imagen": "assets/menu/cordon-bleu.jpg"
+    },
+    {
+      "nombre": "Milanesa de Pollo",
+      "descripcion": "Filete de pollo empanizado acompañado de papas fritas, arroz o ensalada.",
+      "precio": "26.00",
+      "imagen": "assets/menu/milanesa-pollo.jpg"
+    },
+    {
+      "nombre": "Chicharron de Pollo",
+      "descripcion": " Trozos de pollo deshuesado, acompañado de arroz, papas fritas o ensalada.",
+      "precio": "26.00",
+      "imagen": "assets/menu/chicharron-pollo.jpg"
+    },
+    {
+      "nombre": "Pollo a la Plancha",
+      "descripcion": "Pechuga de pollo a la plancha, acompañada papas fritas ,arroz o ensalada.",
+      "precio": "22.00",
+      "imagen": "assets/menu/pollo-plancha.jpg"
+    }
+  ],
+
+  "carnes": [
+    {
+      "nombre": "Lomo Saltado Arboleda",
+      "descripcion": "Finos trozos de carne flameados con cebolla, tomate, ají, vinagre y sillao. Acompañado de papas fritas y arroz.",
+      "precio": "28.00",
+      "imagen": "assets/menu/lomo-saltado.jpg"
+    },
+    {
+      "nombre": "Lomo Fino",
+      "descripcion": "Lomo fino flameado con cebolla, tomate, vinagre y sillao, acompañado de papas amarillas fritas y arroz.",
+      "precio": "38.00",
+      "imagen": "assets/menu/lomo-fino.jpg"
+    },
+    {
+      "nombre": "Medallón de Lomo",
+      "descripcion": "Lomo fino envuelto en tocino, bañado en salsa especial, acompañado de papas amarillas fritas y arroz.",
+      "precio": "38.00",
+      "imagen": "assets/menu/medallon-lomo.jpg"
+    },
+    {
+      "nombre": "Lomo a la Pimienta",
+      "descripcion": "Lomo fino a la plancha con salsa de pimienta granulada, arroz y papas amarillas fritas.",
+      "precio": "36.00",
+      "imagen": "assets/menu/lomo-pimienta.jpg"
+    },
+    {
+      "nombre": "Lomo en Salsa de Champiñones",
+      "descripcion": "Lomo fino a la plancha con crema de champiñones, acompañado de arroz y papas amarillas fritas.",
+      "precio": "37.00",
+      "imagen": "assets/menu/lomo-champinones.jpg"
+    },
+    {
+      "nombre": "Chuleta de Vacuno al Grill",
+      "descripcion": "Chuleta de res a la parrilla con papas fritas amarillas y ensalada.",
+      "precio": "25.00",
+      "imagen": "assets/menu/chuleta.jpg"
+    }
+  ],
+
+  "pescados": [
+    {
+      "nombre": "Ceviche de Pescado",
+      "descripcion": "Pescado marinado en zumo de limón, cebolla roja, camote y choclo desgranado.",
+      "precio": "25.00",
+      "imagen": "assets/menu/ceviche.jpg"
+    },
+    {
+      "nombre": "Ceviche Mixto",
+      "descripcion": "Pescado, pulpo y calamar marinados en limón, acompañados con cebolla, camote y choclo.",
+      "precio": "28.00",
+      "imagen": "assets/menu/ceviche-mixto.jpg"
+    },
+    {
+      "nombre": "Ceviche en Crema de Rocoto",
+      "descripcion": "Pescado marinado en crema de rocoto,acompañado con cebolla roja, camote y choclo desgranado.",
+      "precio": "25.00",
+      "imagen": "assets/menu/ceviche-rocoto.jpg"
+    },
+    {
+      "nombre": "Sudado de Pescado",
+      "descripcion": "Filete de pescado acompañado con cebolla, tomate, concentrado de pescado y arroz blanco.",
+      "precio": "28.00",
+      "imagen": "assets/menu/sudado.jpg"
+    },
+    {
+      "nombre": "Pescado a la Plancha",
+      "descripcion": "Filete de pescado acompañado de papas fritas, arroz o ensalada.",
+      "precio": "24.00",
+      "imagen": "assets/menu/pescado-plancha.jpg"
+    },
+    {
+      "nombre": "Chicharrón de Pescado",
+      "descripcion": "Trozos de pescado frito acompañados de papa dorada y zarza criolla.",
+      "precio": "26.00",
+      "imagen": "assets/menu/chicharron-pescado.jpg"
+    },
+    {
+      "nombre": "Pescado a lo Macho",
+      "descripcion": "Filete de pescado bañado en salsa de mariscos con camarones y calamar.",
+      "precio": "30.00",
+      "imagen": "assets/menu/pescado-macho.jpg"
+    },
+    {
+      "nombre": "Arroz con Mariscos",
+      "descripcion": "Arroz salteado con mariscos frescos, pimiento y toque criollo.",
+      "precio": "26.00",
+      "imagen": "assets/menu/arroz-mariscos.jpg"
+    }
+  ],
+
+  "pastas": [
+    {
+      "nombre": "Fetuccini a la Huancaína con Lomo Saltado",
+      "descripcion": "Fetuccini bañado en crema huancaína con trozos de lomo saltado.",
+      "precio": "35.00",
+      "imagen": "assets/menu/fetuccini-huancaina-lomo.jpg"
+    },
+    {
+      "nombre": "Tallarín al Pesto con Bistec",
+      "descripcion": "Tallarines al pesto servidos con bistec de res.",
+      "precio": "28.00",
+      "imagen": "assets/menu/tallarin-pesto.jpg"
+    },
+    {
+      "nombre": "Fetuccini al Pesto con Apanado",
+      "descripcion": "Fetuccini al pesto servidos con bistec apanado de res.",
+      "precio": "28.00",
+      "imagen": "assets/menu/fetuccini-apanado.jpg"
+    },
+    {
+      "nombre": "Fetuccini al Alfredo",
+      "descripcion": "Fetuccini en salsa Alfredo con crema y parmesano.",
+      "precio": "26.00",
+      "imagen": "assets/menu/fetuccini-alfredo.jpg"
+    },
+    {
+      "nombre": "Tallarín Saltado Criollo",
+      "descripcion": "Tallarines salteados con trozos de carne, cebolla y tomate.",
+      "precio": "22.00",
+      "imagen": "assets/menu/tallarin-saltado.jpg"
+    }
+  ],
+
+  "ensaladas": [
+    {
+      "nombre": "Ensalada Hawaiana",
+      "descripcion": "Tiras de pollo, tocino, lechuga, tomate, piña, crutones y aliño especial.",
+      "precio": "16.00",
+      "imagen": "assets/menu/ensalada-hawaiana.jpg"
+    },
+    {
+      "nombre": "Ensalada La Arboleda",
+      "descripcion": "Tiras de pollo y tocino crocante, lechuga, tomate, palta, pasas y aliño especial.",
+      "precio": "16.00",
+      "imagen": "assets/menu/ensalada-arboleda.jpg"
+    }
+  ],
+
+  "kids": [
+    {
+      "nombre": "Chicharrón de Pollo Kids",
+      "descripcion": "Trozos de pollo deshuesado con papas fritas, arroz o ensalada.",
+      "precio": "15.00",
+      "imagen": "assets/menu/chicharron-kids.jpg"
+    },
+    {
+      "nombre": "Nuggets de Pollo",
+      "descripcion": "Nuggets crujientes con papas fritas, arroz o ensalada.",
+      "precio": "15.00",
+      "imagen": "assets/menu/nuggets.jpg"
+    },
+    {
+      "nombre": "Milanesa de Pollo",
+      "descripcion": "Milanesa de pollo con papas fritas, arroz o ensalada.",
+      "precio": "15.00",
+      "imagen": "assets/menu/milanesa-kids.jpg"
+    }
+
+  ],
+
+  "sandwiches": [
+    {
+      "nombre": "Hamburguesa Clásica",
+      "descripcion": "Hamburguesa de carne con lechuga, tomate y papas fritas.",
+      "precio": "13.00",
+      "imagen": "assets/menu/hamburguesa.jpg"
+    },
+    {
+      "nombre": "Chorizo a la Plancha",
+      "descripcion": "Chorizo artesanal con pan y papas fritas.",
+      "precio": "10.00",
+      "imagen": "assets/menu/chorizo.jpg"
+    }
+  ],
+
+  "bebidas": [
+    {
+      "nombre": "Chicha Morada",
+      "descripcion": "Bebida tradicional peruana elaborada con maíz morado y frutas.",
+      "precio": "14.00",
+      "imagen": "assets/menu/chicha.jpg"
+    },
+    {
+      "nombre": "Jugo de Fresa",
+      "descripcion": "Jugo natural de fresa, con o sin leche.",
+      "precio": "14.00",
+      "imagen": "assets/menu/jugo-fresa.jpg"
+    },
+    {
+      "nombre": "Limonada Frozen",
+      "descripcion": "Refrescante limonada granizada ideal para el verano.",
+      "precio": "14.00",
+      "imagen": "assets/menu/limonada-frozen.jpg"
+    }
+  ],
+
+  "cocteles": [
+    {
+      "nombre": "Pisco Sour",
+      "descripcion": "Pisco, limón, jarabe de goma y clara de huevo, batido con hielo.",
+      "precio": "14.00",
+      "imagen": "assets/menu/pisco-sour.jpg"
+    },
+    {
+      "nombre": "Maracuyá Sour",
+      "descripcion": "Pisco con jugo de maracuyá, jarabe y clara de huevo.",
+      "precio": "14.00",
+      "imagen": "assets/menu/maracuya-sour.jpg"
+    },
+    {
+      "nombre": "Mojito Clásico",
+      "descripcion": "Ron, hierba buena, limón, azúcar y ginger ale.",
+      "precio": "15.00",
+      "imagen": "assets/menu/mojito.jpg"
+    },
+    {
+      "nombre": "Piña Colada",
+      "descripcion": "Ron, piña y crema de coco.",
+      "precio": "15.00",
+      "imagen": "assets/menu/pina-colada.jpg"
+    }
+  ]
+}
